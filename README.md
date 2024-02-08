@@ -1,1 +1,1 @@
-# clcm3506-jenkins
+# simple-static-website
