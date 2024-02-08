@@ -14,7 +14,7 @@ pipeline {
       steps {
         withAWS(region: 'us-east-1', credentials: 'Jenkins-cred') {
           sh 'echo "Uploading content with AWS creds"'
-          s3Upload(profileName:"test" [bucket:'clcm3506-ash-group',sourceFile:'*'])
+          s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file: '.', bucket: 'clcm3506-ash-group')
         }
       }
     }
